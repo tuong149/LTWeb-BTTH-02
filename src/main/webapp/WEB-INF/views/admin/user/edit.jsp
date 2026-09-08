@@ -6,7 +6,7 @@
 
 <div class="container-fluid bg-white p-4 rounded shadow-sm" style="max-width: 800px; margin: 0 auto;">
     <h3 class="mb-4 fw-bold" style="color: #0a192f;">Cập Nhật Thông Tin Người Dùng</h3>
-    <form:form action="/admin/users/edit/${user.id}" method="post" modelAttribute="user" enctype="multipart/form-data">
+    <form:form action="/admin/user/edit" method="post" modelAttribute="user" enctype="multipart/form-data">
         <form:hidden path="id" />
         <div class="row">
             <div class="col-md-6 mb-3">
@@ -67,7 +67,7 @@
         </div>
         <div class="d-flex gap-2">
             <button type="submit" class="btn btn-primary px-4">Cập nhật</button>
-            <a href="/admin/users" class="btn btn-light px-4">Hủy</a>
+            <a href="/admin/user/list" class="btn btn-light px-4">Hủy</a>
         </div>
     </form:form>
 </div>

@@ -5,7 +5,7 @@
 
 <div class="container-fluid bg-white p-4 rounded shadow-sm" style="max-width: 800px; margin: 0 auto;">
     <h3 class="mb-4 fw-bold" style="color: #0a192f;">Thêm Danh Mục Mới</h3>
-    <form:form action="/admin/categories/add" method="post" modelAttribute="category" enctype="multipart/form-data">
+    <form:form action="/admin/category/add" method="post" modelAttribute="category" enctype="multipart/form-data">
         <div class="mb-4">
             <label class="form-label fw-semibold">Tên danh mục</label>
             <form:input path="name" cssClass="form-control" placeholder="Nhập tên danh mục..." />
@@ -24,7 +24,7 @@
         </div>
         <div class="d-flex gap-2">
             <button type="submit" class="btn btn-primary px-4">Lưu danh mục</button>
-            <a href="/admin/categories" class="btn btn-light px-4">Hủy</a>
+            <a href="/admin/category/list" class="btn btn-light px-4">Hủy</a>
         </div>
     </form:form>
 </div>

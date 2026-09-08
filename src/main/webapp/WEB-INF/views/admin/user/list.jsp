@@ -6,7 +6,7 @@
 <div class="container-fluid bg-white p-4 rounded shadow-sm">
     <div class="d-flex justify-content-between align-items-center mb-4">
         <h2 class="fw-bold m-0" style="color: #0a192f;">Quản Lý Người Dùng</h2>
-        <a href="/admin/users/add" class="btn btn-primary px-4">+ Thêm User</a>
+        <a href="/admin/user/add" class="btn btn-primary px-4">+ Thêm User</a>
     </div>
     
     <table class="table table-hover table-bordered align-middle">
@@ -52,8 +52,8 @@
                     </span>
                 </td>
                 <td class="text-center">
-                    <a href="/admin/users/edit/${u.id}" class="btn btn-sm btn-outline-primary me-2">Sửa</a>
-                    <a href="/admin/users/delete/${u.id}" class="btn btn-sm btn-outline-danger" onclick="return confirm('Bạn có chắc muốn xóa người dùng này?');">Xóa</a>
+                    <a href="/admin/user/edit/${u.id}" class="btn btn-sm btn-outline-primary me-2">Sửa</a>
+                    <a href="/admin/user/delete/${u.id}" class="btn btn-sm btn-outline-danger" onclick="return confirm('Bạn có chắc muốn xóa người dùng này?');">Xóa</a>
                 </td>
             </tr>
         </c:forEach>

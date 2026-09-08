@@ -45,7 +45,7 @@
         </div>
         <div class="d-flex gap-2">
             <button type="submit" class="btn btn-primary px-4">Lưu</button>
-            <a href="/admin/users" class="btn btn-light px-4">Hủy</a>
+            <a href="/admin/user/list" class="btn btn-light px-4">Hủy</a>
         </div>
     </form:form>
 </div>
