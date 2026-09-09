@@ -6,13 +6,13 @@
     </div>
     <ul class="nav flex-column mt-4">
         <li class="nav-item">
-            <a class="nav-link $"{pageContext.request.requestURI.contains('dashboard.jsp') ? 'active' : ''}"" href="/admin">Dashboard</a>
+            <a class="nav-link ${pageContext.request.requestURI.contains('dashboard.jsp') ? 'active' : ''}" href="/admin">Dashboard</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link $"{pageContext.request.requestURI.contains('/category/') ? 'active' : ''}"" href="/admin/category/list">Quản lý danh mục</a>
+            <a class="nav-link ${pageContext.request.requestURI.contains('/category/') ? 'active' : ''}" href="/admin/category/list">Quản lý danh mục</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link $"{pageContext.request.requestURI.contains('/user/') ? 'active' : ''}"" href="/admin/user/list">Quản lý người dùng</a>
+            <a class="nav-link ${pageContext.request.requestURI.contains('/user/') ? 'active' : ''}" href="/admin/user/list">Quản lý người dùng</a>
         </li>
     </ul>
 </div>
