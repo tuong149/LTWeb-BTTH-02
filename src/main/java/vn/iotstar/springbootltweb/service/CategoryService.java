@@ -16,4 +16,5 @@ public class CategoryService {
     public Optional<Category> findById(Long id) { return categoryRepository.findById(id); }
     public Category save(Category category) { return categoryRepository.save(category); }
     public void deleteById(Long id) { categoryRepository.deleteById(id); }
+    public List<Category> searchByName(String keyword) { return categoryRepository.findByNameContainingIgnoreCase(keyword); }
 }

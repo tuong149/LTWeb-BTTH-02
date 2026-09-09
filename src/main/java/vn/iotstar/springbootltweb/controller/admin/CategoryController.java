@@ -29,8 +29,8 @@ public class CategoryController {
     private String uploadDir;
 
     @GetMapping("/list")
-    public String showListCategoryPage(Model model) {
-        model.addAttribute("categories", categoryService.findAll());
+    public String showListCategoryPage(@RequestParam(value = "keyword", required = false) String keyword, Model model) {
+        if (StringUtils.hasText(keyword)) { model.addAttribute("categories", categoryService.searchByName(keyword)); model.addAttribute("keyword", keyword); } else { model.addAttribute("categories", categoryService.findAll()); }
         return "admin/category/list"; 
     }
 

@@ -29,8 +29,8 @@ public class UserController {
     private String uploadDir;
 
     @GetMapping("/list")
-    public String showListUserPage(Model model) {
-        model.addAttribute("users", userRepository.findAll());
+    public String showListUserPage(@RequestParam(value = "keyword", required = false) String keyword, Model model) {
+        if (StringUtils.hasText(keyword)) { model.addAttribute("users", userRepository.findByFullnameContainingIgnoreCaseOrEmailContainingIgnoreCase(keyword, keyword)); model.addAttribute("keyword", keyword); } else { model.addAttribute("users", userRepository.findAll()); }
         return "admin/user/list"; 
     }
 
