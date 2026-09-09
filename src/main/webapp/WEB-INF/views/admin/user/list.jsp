@@ -7,7 +7,7 @@
     <div class="d-flex justify-content-between align-items-center mb-4">
         <h2 class="fw-bold m-0" style="color: #0a192f;">Quản Lý Người Dùng</h2>
                 <form action="/admin/user/list" method="get" class="d-flex gap-2">
-            <input type="text" name="keyword" value="$"{keyword}"" class="form-control" placeholder="Tìm kiếm..." style="width: 250px;">
+            <input type="text" name="keyword" value=""{keyword}"" class="form-control" placeholder="Tìm kiếm..." style="width: 250px;">
             <button type="submit" class="btn btn-outline-primary">Tìm</button>
         </form>
         <a href="/admin/user/add" class="btn btn-primary px-4">+ Thêm User</a>
