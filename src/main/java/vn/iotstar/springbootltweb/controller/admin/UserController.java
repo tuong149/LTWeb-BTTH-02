@@ -30,7 +30,12 @@ public class UserController {
 
     @GetMapping("/list")
     public String showListUserPage(@RequestParam(value = "keyword", required = false) String keyword, Model model) {
-        if (StringUtils.hasText(keyword)) { model.addAttribute("users", userRepository.findByFullnameContainingIgnoreCaseOrEmailContainingIgnoreCase(keyword, keyword)); model.addAttribute("keyword", keyword); } else { model.addAttribute("users", userRepository.findAll()); }
+        if (StringUtils.hasText(keyword)) {
+            model.addAttribute("users", userRepository.findByFullnameContainingIgnoreCaseOrEmailContainingIgnoreCase(keyword, keyword));
+            model.addAttribute("keyword", keyword);
+        } else {
+            model.addAttribute("users", userRepository.findAll());
+        }
         return "admin/user/list"; 
     }
 
@@ -63,14 +68,18 @@ public class UserController {
 
     @PostMapping("/edit")
     public String updateUser(@ModelAttribute("user") User user, @RequestParam("file") MultipartFile file) {
-        Optional<User> existingUser = userRepository.findById(user.getId());
-        if (existingUser.isPresent()) {
+        Optional<User> existingUserOpt = userRepository.findById(user.getId());
+        if (existingUserOpt.isPresent()) {
+            User existingUser = existingUserOpt.get();
+            if (!StringUtils.hasText(user.getPassword())) {
+                user.setPassword(existingUser.getPassword());
+            }
             if (!file.isEmpty()) {
                 String fileName = StringUtils.cleanPath(file.getOriginalFilename());
                 user.setImages(fileName);
                 saveFile(file, fileName);
             } else {
-                user.setImages(existingUser.get().getImages());
+                user.setImages(existingUser.getImages());
             }
             userRepository.save(user);
         }
